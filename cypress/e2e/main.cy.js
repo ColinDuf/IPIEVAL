@@ -15,7 +15,8 @@ describe('Modal Tests', () => {
     it('Should close the modal window cliking out of the module ', () => {
         cy.dataCy('display-button').click();
         cy.dataCy('modal').should('be.visible');
-        cy.get('body').click(0, 0); 
+        cy.wait(1000)
+        cy.get('body').click(0, 0);
         cy.dataCy('modal').should('not.be.visible');
     });
 
